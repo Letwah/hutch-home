@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
-import ImgBox from "./components/ImgBox/ImgBox";
+import ImgBox from "./components/ImgBox";
 import { GlobalStyle, Wrapper, ImageContainer } from "./styles";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // prettier-ignore
 const matrix = [
@@ -39,11 +39,12 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-
+      <Header />
+      <Footer />
       <Wrapper
         onMouseMove={handleMove}
         onTouchMove={handleTouchMove}
-        $color={Math.round(240 - distance * 40)}
+        $color={Math.round(150 - distance * 340)}
       >
         <ImageContainer $isTogether={distance < 0.001}>
           {matrix.map(([x, y], index) => (
